@@ -1,6 +1,8 @@
-# protonvpn-qbittorrent-port
+# ProtonVPN <-> QBitTorrent Port Sync Service
 
-Keeps qBittorrent's listening port in sync with the port forwarded by ProtonVPN, on macOS.
+**NOTE: This is a MacOS-only solution. If you're using Windows, take a look at [qbPortWeaver](https://github.com/martsg666/qbPortWeaver).**
+
+Keeps qBittorrent's listening port in sync with the port forwarded by ProtonVPN.
 
 ProtonVPN's NAT-PMP-assigned forwarded port can change whenever the VPN reconnects. Without an external sync, qBittorrent keeps using its old (now-blocked) port and incoming connections silently fail. This repo polls ProtonVPN every hour, and if the port has changed, quits qBittorrent, rewrites its config, and relaunches it.
 
